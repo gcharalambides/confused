@@ -1,0 +1,59 @@
+<head>
+  <title>wait-what</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="bootstrap-responsive.css" rel="stylesheet">
+</head>
+
+
+<body>
+
+  <!-- Navbar
+  ================================================== -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="./index.html">Confusion-o-meter</a>
+        <!--
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="">
+              <a href="./index.html">Home</a>
+            </li>
+            <li class="">
+              <a href="./getting-started.html">Get started</a>
+            </li>
+          </ul>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+
+  {{> peers}}
+  {{> button}}
+</body>
+
+<template name="peers">
+  <div class="well">
+    confused students: {{confused}} / {{total}}
+    <div class="progress">
+      <div class="bar bar-danger" style="width: {{good}}%;"></div>
+      <div class="bar bar-success" style="width: {{bad}}%;"></div>
+    </div>
+  </div>
+</template>
+
+<template name="button">
+  <div>
+    {{#if user.confused}}
+      <input class="btn btn-primary btn-large" type="button" value="I get it" />
+    {{else}}
+      <input class="btn btn-primary btn-large" type="button" value="I'm confused" />
+    {{/if}}
+  </div>
+</template>
