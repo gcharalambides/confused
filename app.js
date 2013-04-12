@@ -116,14 +116,3 @@ if (Meteor.isClient) {
     Students.update(getId(), { $set: { 'lastActivity': now() }});
   }, EPOCH / 2);
 }
-
-
-/*
- * Meteor.Server
- */
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}

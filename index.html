@@ -1,9 +1,7 @@
 <head>
   <title>wait-what</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="bootstrap-responsive.css" rel="stylesheet">
 </head>
-
 
 <body>
 
@@ -34,10 +32,22 @@
     </div>
   </div>
 
+  <!-- Spacer so it looks OK on desktop
+  ================================================== -->
+  <div class="visible-desktop">
+    <br/>
+    <br/>
+    <br/>
+  </div>
+
+  <!-- Add Dynamic Templates
+  ================================================== -->
   {{> peers}}
   {{> button}}
 </body>
 
+<!-- Template.peers: Shows other people who are confused
+  ================================================== -->
 <template name="peers">
   <div class="well">
     confused students: {{confused}} / {{total}}
@@ -48,6 +58,8 @@
   </div>
 </template>
 
+<!-- Template.peers: Allows you to say you're confused
+  ================================================== -->
 <template name="button">
   <div>
     {{#if user.confused}}
